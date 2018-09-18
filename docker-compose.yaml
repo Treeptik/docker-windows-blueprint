@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+  web:
+    build: 
+        context: ./image
+        dockerfile: Dockerfile
+    image: service_fred:latest
+    ports:
+     - target: 80
+       published: 8080
+       mode: ingress
+    environment:
+     - ENV_02=MDR
